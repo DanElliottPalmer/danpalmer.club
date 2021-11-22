@@ -24,14 +24,14 @@ I have a card component. It contains an image, a title, a teaser and a byline. F
 
 ```jsx
 const Card = ({ byline, image, teaser, title }) => {
-	return (
-		<div>
-			{image && <img {...image} />}
-			{title && <h2>{title}</h2>}
-			{teaser && <p>{teaser}</p>}
-			{byline && <p>By: {byline}</p>}
-		</div>
-	);
+  return (
+    <div>
+      {image && <img {...image} />}
+      {title && <h2>{title}</h2>}
+      {teaser && <p>{teaser}</p>}
+      {byline && <p>By: {byline}</p>}
+    </div>
+  );
 };
 ```
 
@@ -39,14 +39,14 @@ Beautiful. Then we're asked to prevent the byline from rendering on profile page
 
 ```jsx
 const Card = ({ byline, image, teaser, title, hideByline = false }) => {
-	return (
-		<div>
-			{image && <img {...image} />}
-			{title && <h2>{title}</h2>}
-			{teaser && <p>{teaser}</p>}
-			{!hideByline && byline && <p>By: {byline}</p>}
-		</div>
-	);
+  return (
+    <div>
+      {image && <img {...image} />}
+      {title && <h2>{title}</h2>}
+      {teaser && <p>{teaser}</p>}
+      {!hideByline && byline && <p>By: {byline}</p>}
+    </div>
+  );
 };
 ```
 

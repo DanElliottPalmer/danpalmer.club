@@ -24,9 +24,9 @@ var fnAppendToBody = (function () {
   var domBody = document.body;
 
   try {
-    domBody.appendChild(document.createElement('div'));
+    domBody.appendChild(document.createElement("div"));
   } catch (e) {
-    domBody = document.documentElement.getElementsByTagName('body')[0];
+    domBody = document.documentElement.getElementsByTagName("body")[0];
   }
 
   return function (domElm) {

@@ -32,9 +32,9 @@ With getSources, you pass it a function and it will return an array of informati
 ```js
 MediaStreamTrack.getSources(function (sources) {
   sources.forEach(function (source) {
-    console.log('Source id: ', source.id);
-    console.log('Source kind: ', source.kind);
-    console.log('Source label: ', source.label);
+    console.log("Source id: ", source.id);
+    console.log("Source kind: ", source.kind);
+    console.log("Source label: ", source.label);
   });
 });
 ```
@@ -63,7 +63,7 @@ navigator.getUserMedia(
     audio: {
       optional: [
         {
-          sourceId: 'OUR_GLORIOUS_ID',
+          sourceId: "OUR_GLORIOUS_ID",
         },
       ],
     },
@@ -75,11 +75,11 @@ navigator.getUserMedia(
 
 function onSuccess(stream) {
   var track = stream.getAudioTracks()[0];
-  console.log('Nice label: ', track.label);
+  console.log("Nice label: ", track.label);
   stream.stop();
 }
 function onFail() {
-  console.error('Woah crap, there was an error');
+  console.error("Woah crap, there was an error");
 }
 ```
 

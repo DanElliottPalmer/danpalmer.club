@@ -45,8 +45,8 @@ Testing a browser for HTML5 audio can consist of two tests: checking if the brow
 The code to test whether a browser can play a format consists of this:
 
 ```js
-var AudioElement = document.createElement('audio'),
-  AudioElementResponse = AudioElement.canPlayType('audio/mpeg');
+var AudioElement = document.createElement("audio"),
+  AudioElementResponse = AudioElement.canPlayType("audio/mpeg");
 ```
 
 However! It's response are probably, maybe or no (or just an empty string). Now to me, probably and maybe, are pretty much the same thing.
@@ -58,22 +58,22 @@ However! It's response are probably, maybe or no (or just an empty string). Now 
 Anyway, what I read is that it is best to go with the assumption that the browser can play the audio if it says probably. But if it says maybe, you're going to need to check.
 
 ```js
-var AudioElement = document.createElement('audio');
-AudioElement.src = './I-like-to-Dance.mp3';
-AudioElement.addEventListener('loadeddata', audioTestListener, false);
+var AudioElement = document.createElement("audio");
+AudioElement.src = "./I-like-to-Dance.mp3";
+AudioElement.addEventListener("loadeddata", audioTestListener, false);
 AudioElement.load();
 
 try {
   AudioElement.play();
   AudioElement.pause();
 } catch (e) {
-  AudioElement.removeEventListener('loadeddata', audioTestListener, false);
-  console.log('Fail');
+  AudioElement.removeEventListener("loadeddata", audioTestListener, false);
+  console.log("Fail");
 }
 
 function audioTestListener() {
-  AudioElement.removeEventListener('loadeddata', audioTestListener, false);
-  console.log('Success');
+  AudioElement.removeEventListener("loadeddata", audioTestListener, false);
+  console.log("Success");
 }
 ```
 
@@ -84,11 +84,11 @@ This allows us to attempt to load the audio, play it and then pause it. If it su
 iOS does not like to fire off canplay, canplaythrough or loadeddata when trying audio. Instead, it fires off progress. So we need to do a switch if it happens to be an iOS device.
 
 ```js
-var AudioElement = document.createElement('audio'),
+var AudioElement = document.createElement("audio"),
   AudioPreloadEvent = navigator.userAgent.match(/(iPod|iPhone|iPad)/i)
-    ? 'progress'
-    : 'loadeddata';
-AudioElement.src = './I-like-to-Dance.mp3';
+    ? "progress"
+    : "loadeddata";
+AudioElement.src = "./I-like-to-Dance.mp3";
 AudioElement.addEventListener(AudioPreloadEvent, audioTestListener, false);
 AudioElement.load();
 
@@ -97,12 +97,12 @@ try {
   AudioElement.pause();
 } catch (e) {
   AudioElement.removeEventListener(AudioPreloadEvent, audioTestListener, false);
-  console.log('Fail');
+  console.log("Fail");
 }
 
 function audioTestListener() {
   AudioElement.removeEventListener(AudioPreloadEvent, audioTestListener, false);
-  console.log('Success');
+  console.log("Success");
 }
 ```
 
@@ -132,25 +132,25 @@ I went through several stages of trying to load flash into a page.
 
 ```js
 //Attempt 1
-var FlashObject = document.createElement('object');
-FlashObject.innerHTML = 'ALL THE PARAMS AND EMBED TAG';
+var FlashObject = document.createElement("object");
+FlashObject.innerHTML = "ALL THE PARAMS AND EMBED TAG";
 document.body.appendChild(FlashObject);
 
 //Attempt 2
-var FlashObject = document.createElement('object'),
-  ParamTag1 = document.createElement('param');
+var FlashObject = document.createElement("object"),
+  ParamTag1 = document.createElement("param");
 FlashObject.appendChild(ParamTag1);
 document.body.appendChild(FlashObject);
 
 //Attempt 3
-var FlashObjectCont = document.createElement('div');
-FlashObjectCont.innerHTML = 'OBJECT, PARAMS AND EMBED STUFF';
+var FlashObjectCont = document.createElement("div");
+FlashObjectCont.innerHTML = "OBJECT, PARAMS AND EMBED STUFF";
 document.body.appendChild(FlashObjectCont);
 
 //Attempt 4
-var FlashObjectCont = document.createElement('div'),
-  FlashObject = document.createElement('object');
-FlashObject.innerHTML = 'ALL THE PARAMS AND EMBED TAG';
+var FlashObjectCont = document.createElement("div"),
+  FlashObject = document.createElement("object");
+FlashObject.innerHTML = "ALL THE PARAMS AND EMBED TAG";
 FlashObjectCont.appendChild(FlashObject);
 document.body.appendChild(FlashObjectCont);
 
@@ -164,7 +164,7 @@ All of these examples worked in at least a few of them but none, worked in Inter
 ```js
 // Inject the player markup using a more verbose `innerHTML` insertion technique that works with IE.
 var html = audio.wrapper.innerHTML,
-  div = document.createElement('div');
+  div = document.createElement("div");
 div.innerHTML = flashSource + html;
 audio.wrapper.innerHTML = div.innerHTML;
 audio.element = this.helpers.getSwf(id);
@@ -178,7 +178,7 @@ There's a common piece of code floating around used to get the Flash object cons
 
 ```js
 function getMovie(movieName) {
-  if (navigator.appName.indexOf('Microsoft') != -1) {
+  if (navigator.appName.indexOf("Microsoft") != -1) {
     return window[movieName];
   } else {
     return document[movieName];
