@@ -1,0 +1,17 @@
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link-list__item {
+  @include apply-type-styles("roles.body");
+  display: inline-block;
+  font-size: get-type-size("small");
+  margin: 0;
+  padding: 0;
+}
+
+.link-list__item + .link-list__item {
+  margin-left: modular-scale(2);
+}

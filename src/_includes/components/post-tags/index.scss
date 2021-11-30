@@ -1,0 +1,4 @@
+.post-tags {
+  @include apply-type-styles("roles.body");
+  font-size: get-type-size("small");
+}

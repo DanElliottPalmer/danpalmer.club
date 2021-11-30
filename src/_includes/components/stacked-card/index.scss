@@ -1,0 +1,36 @@
+.stacked-card {
+}
+
+.stacked-card__title {
+  @include apply-type-styles("roles.heading");
+  color: get-color-token("text.heading");
+  font-size: get-type-size("large");
+  margin: 0 0 modular-scale(1) 0;
+}
+
+.stacked-card__teaser {
+  @include apply-type-styles("roles.body");
+  color: get-color-token("text.body");
+  font-size: get-type-size("medium");
+  margin: modular-scale(1) 0;
+}
+
+.stacked-card__meta-list {
+  @include apply-type-styles("roles.body");
+  color: get-color-token("text.body");
+  display: flex;
+  font-size: get-type-size("small");
+  font-style: italic;
+  list-style: none;
+  margin: modular-scale(1) 0 0 0;
+  padding: 0;
+}
+
+.stacked-card__meta-list__item {
+  margin-right: modular-scale(1);
+}
+
+.stacked-card__meta-list__item + .stacked-card__meta-list__item {
+  border-left: 1px solid get-color-token("divider");
+  padding-left: modular-scale(1);
+}

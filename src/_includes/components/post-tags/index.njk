@@ -1,0 +1,25 @@
+{% from '../anchor/index.njk' import anchor %}
+
+{% macro post_tags(tags) %}
+  {% set tag_length = tags | length %}
+  {% if tag_length > 0 %}
+    <div class="post-tags">
+      Tags: 
+      {% if tag_length == 1 %}
+        {{ anchor(tags[0]['label'], tags[0]['url']) }}
+      {% elif tag_length == 2 %}
+        {{ anchor(tags[0]['label'], tags[0]['url']) }} and {{ anchor(tags[1]['label'], tags[1]['url']) }}
+      {% else %}
+        {%- for tag in tags -%}
+          {%- if loop.last %}
+            and {{ anchor(tag['label'], tag['url']) }}
+          {%- elif loop.first -%}
+            {{ anchor(tag['label'], tag['url']) }}
+          {%- else -%}
+            , {{ anchor(tag['label'], tag['url']) }}
+          {%- endif -%}
+        {%- endfor %}
+      {% endif %}
+    </div>
+  {% endif %}
+{% endmacro %}

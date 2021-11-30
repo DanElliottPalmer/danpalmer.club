@@ -1,0 +1,5 @@
+{% macro anchor(children='', href='', type='primary') -%}
+  <a class="anchor anchor--{{ type }}" href="{{ href | safe }}">
+    {%- if caller %}{{ caller() }}{% else %}{{ children }}{% endif -%}
+  </a>
+{%- endmacro %}

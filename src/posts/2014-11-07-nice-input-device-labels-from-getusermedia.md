@@ -18,7 +18,7 @@ Over the past couple of days, I’ve been tinkering around with getUserMedia for
 Something I was curious about was whether it was possible to get all the audio and video input devices currently connected to the computer with friendlier names. Like Built-in microphone or FaceTime HD camera.
 
 I happened to spot Google Hangout use a combo box that had nice readable names of your devices. So I figured it was possible.
-![GOOGLE CAN DO IT! SO CAN YOU!](/images/THESE-NAMES-ARE-FRIENDLY.png)
+![GOOGLE CAN DO IT! SO CAN YOU!](/static/images/THESE-NAMES-ARE-FRIENDLY.png)
 
 This post is separated into two sections: MediaStreamTrack and getUserMedia.
 

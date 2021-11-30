@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "index.css",
+	"sources": [
+		"../../../_includes/components/card-stack/index.scss"
+	],
+	"names": [],
+	"mappings": "AAGA,AAAA,iBAAiB,CAAC;EAChB,MAAM,EAAE,kBAAkB,CAAC,CAAC,GAC7B"
+}

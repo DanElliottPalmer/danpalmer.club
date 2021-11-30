@@ -1,0 +1,30 @@
+.heading {
+  @include apply-type-styles("roles.heading");
+  color: get-color-token("text.heading");
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+.heading--one {
+  font-size: get-type-size("extra-extra-large");
+}
+
+.heading--two {
+  font-size: get-type-size("extra-large");
+}
+
+.heading--three {
+  font-size: get-type-size("large");
+}
+
+.heading--four {
+  font-size: get-type-size("medium");
+}
+
+.heading--five {
+  font-size: get-type-size("small");
+}
+
+.heading--six {
+  font-size: get-type-size("extra-small");
+}

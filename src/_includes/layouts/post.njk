@@ -1,0 +1,22 @@
+{% from '../components/skip-to-main-button/index.njk' import skip_to_main_button %}
+{% from '../components/post-header/index.njk' import post_header %}
+{% from '../components/post-tags/index.njk' import post_tags %}
+
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <div class="site-wrapper">
+    {{ skip_to_main_button() }}
+
+    {{ post_header(title, publish_date_label, publish_date_datetime,
+        category_name=category_name, category_url=category_url) }}
+
+    <main id="main-content">
+      {{ content | safe }}
+
+      <footer>
+        {{ post_tags(tags) }}
+      </footer>
+    </main>
+  </div>
+{% endblock %}

@@ -24,7 +24,7 @@ The caseno (yes, I'm going to call it that all the way through) has multiple roo
 
 My favourite room is the restaurant. It is full with dining aliens but also, pizza. Pizza is in the oven, pizza poster on the wall and in the background is a soft piano version of That's Amore by Dean Martin.
 
-![Alien Caseno](/images/smi-alien-caseno.jpg)
+![Alien Caseno](/static/images/smi-alien-caseno.jpg)
 _... well it's not wrong._
 
 Along with the game, you also are given access to a PDF beautifully titled "ALIEN GUIDE!!!!!!!!!!!!!!!!" This contains a list of all the aliens in the game with their names. They range from traditional names such as Barney, Randy and Sebastian but also some of the names are representative as to their role in the caseno or what they're doing. You have Bonapetit, one of the chefs in the restaurant, Swimboi, an alien boy who is swimming, and Security. The caseno's security.

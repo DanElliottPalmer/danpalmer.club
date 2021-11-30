@@ -1,0 +1,99 @@
+@import "./theme.json";
+@import "./functions";
+@import "./mixins";
+
+@import "./code-highlight";
+@import "./web-fonts";
+@import "../components/anchor/index.scss";
+@import "../components/button/index.scss";
+@import "../components/heading/index.scss";
+@import "../components/site-header/index.scss";
+@import "../components/site-footer/index.scss";
+@import "../components/skip-to-main-button/index.scss";
+@import "../components/stacked-card/index.scss";
+@import "../components/card-stack/index.scss";
+@import "../components/link-list/index.scss";
+@import "../components/post-header/index.scss";
+@import "../components/post-tags/index.scss";
+
+:root {
+  @include apply-css-variables;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: get-color-token("background.page");
+  background-image: url("/static/images/bg-pattern.svg");
+  background-repeat: repeat;
+  background-size: 250px auto;
+}
+
+.site-wrapper {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: modular-scale(2);
+}
+
+.sarcasm {
+  font-size: get-type-size("medium");
+  font-style: italic;
+}
+
+.paragraph {
+  @include apply-type-styles("roles.body");
+  color: get-color-token("text.body");
+  font-size: get-type-size("medium");
+  margin: modular-scale(2) 0;
+}
+
+.rule {
+  border-color: get-color-token("divider");
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  margin: modular-scale(2) 0;
+}
+
+.blockquote {
+  border-left: 8px solid get-color-token("border");
+  margin: modular-scale(2) 0;
+  padding: modular-scale(2) modular-scale(1);
+}
+
+.blockquote > *:first-child {
+  margin-top: 0;
+}
+.blockquote > *:last-child {
+  margin-bottom: 0;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: modular-scale(2) 0;
+
+  th {
+    @include apply-type-styles("roles.heading");
+    border: 2px dashed get-color-token("border");
+    padding: modular-scale(1);
+  }
+
+  td {
+    @include apply-type-styles("roles.body");
+    border: 2px dashed get-color-token("border");
+    padding: modular-scale(1);
+  }
+}
+
+.image {
+  display: block;
+  margin: modular-scale(2) 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.mark {
+  background-color: get-color-token("background.mark");
+}

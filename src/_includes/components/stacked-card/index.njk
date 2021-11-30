@@ -1,0 +1,32 @@
+{% from '../anchor/index.njk' import anchor %}
+
+{% macro stacked_card(title, url, teaser='', publish_date_label='',
+    publish_date_datetime='', category_name='', category_url='') %}
+
+  {% set has_publish_meta = publish_date_label and publish_date_datetime %}
+  {% set has_category_meta = category_name and category_url %}
+  {% set has_meta = has_publish_meta or has_category_meta %}
+
+  <article class="stacked-card">
+    <h3 class="stacked-card__title">
+      {{ anchor(title, url) }}
+    </h3>
+    {% if teaser %}
+      <p class="stacked-card__teaser">{{ teaser }}</p>
+    {% endif %}
+    {% if has_meta %}
+      <ul class="stacked-card__meta-list">
+        {% if has_publish_meta %}
+          <li class="stacked-card__meta-list__item">
+            Written on <time datetime="{{ publish_date_datetime }}">{{ publish_date_label }}</time>
+          </li>
+        {% endif %}
+        {% if has_category_meta %}
+          <li class="stacked-card__meta-list__item">
+            Filed under {{ anchor(category_name, category_url, type='secondary') }}
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+  </article>
+{% endmacro %}

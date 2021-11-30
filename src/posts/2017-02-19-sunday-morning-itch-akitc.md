@@ -27,7 +27,7 @@ The controls for the game are simple: arrows keys to move, `z` to undo your move
 
 The game uses very simple designed tiles; very similar looking to early gameboy games such as Zelda and Final Fantasy. The game uses a limited selection of only three colours for its entire game. #D5BBE4 as the floor or object highlight, #68A587 to represent greenery and #0F3777 for the object form.
 
-![A Kishōtenketsu in the countryside](/images/smi-akitc.jpg)
+![A Kishōtenketsu in the countryside](/static/images/smi-akitc.jpg)
 
 There is no background music as you explore the world which for a change is quite nice. The silence makes it a lot easier to think and solve some of the puzzles. There are however sound effects. A deep fuzz as you move items; a moderate wooden knock as you bump into a tree; a light tinkle as you complete a chapter.
 

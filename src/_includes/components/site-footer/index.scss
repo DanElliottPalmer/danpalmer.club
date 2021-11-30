@@ -1,0 +1,16 @@
+.site-footer {
+  margin-top: modular-scale(3);
+  position: relative;
+}
+
+.site-footer::before {
+  @include apply-wavy-line();
+  margin: 0 0 modular-scale(3) 0;
+}
+
+.site-footer__body {
+  @include apply-type-styles("roles.body");
+  color: get-color-token("text.body");
+  font-size: get-type-size("small");
+  margin: modular-scale(2) 0;
+}

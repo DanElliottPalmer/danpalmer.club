@@ -1,0 +1,91 @@
+@function get-color-token($color-token, $fallback-value: inherit) {
+  @return var(
+    --color-#{str-replace($color-token, ".", "-")},
+    #{$fallback-value}
+  );
+}
+
+@function get-type-size($font-size) {
+  @return var(--type-size-#{$font-size});
+}
+
+@function get-type-token-value($type-token) {
+  $value: $typography;
+  $pieces: str-split($type-token, ".");
+
+  @each $piece in $pieces {
+    $value: map-get($value, $piece);
+  }
+
+  @return $value;
+}
+
+@function is-falsey($value) {
+  @if not
+    $value or
+    $value ==
+    "" or
+    $value ==
+    0 or
+    $value ==
+    () or
+    length($value) ==
+    0
+  {
+    @return true;
+  }
+  @return false;
+}
+
+@function list-join($list, $separator) {
+  $joined-list: null;
+
+  @if length($list) > 0 {
+    @for $i from 1 through length($list) {
+      $item: nth($list, $i);
+
+      @if $i != length($list) {
+        $joined-list: $joined-list#{$item}#{$separator};
+      } @else {
+        $joined-list: $joined-list#{$item};
+      }
+    }
+  }
+
+  @return $joined-list;
+}
+
+@function modular-scale($unit: 1) {
+  @return calc(var(--spacing) * #{$unit});
+}
+
+@function str-replace($string, $search, $replace: "") {
+  @return list-join(str-split($string, $search), $replace);
+}
+
+@function str-split($string, $separator) {
+  $pieces: [];
+
+  $index: str-index($string, $separator);
+
+  @if $index == null {
+    $pieces: append($pieces, $string);
+  } @else {
+    @while $index != null {
+      $slice: str-slice($string, 1, $index - 1);
+      $pieces: append($pieces, $slice);
+      $string: str-slice($string, $index + 1);
+      $index: str-index($string, $separator);
+    }
+    @if $string != "" {
+      $pieces: append($pieces, $string);
+    }
+  }
+
+  @return $pieces;
+}
+
+@function to-rems($value) {
+  $spacing-base: map-get($spacing, "base");
+  @return ($value / $spacing-base) * 1rem;
+}

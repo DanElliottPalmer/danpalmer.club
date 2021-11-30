@@ -1,0 +1,10 @@
+{% from '../button/index.njk' import button %}
+
+{% macro skip_to_main_button() %}
+  {{ button(
+      'Skip to main content', 
+      type='link', 
+      class='skip-to-main-button', 
+      href='#main-content'
+  ) }}
+{% endmacro %}

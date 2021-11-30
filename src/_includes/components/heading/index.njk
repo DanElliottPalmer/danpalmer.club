@@ -1,0 +1,4 @@
+{% macro heading(children='', level='one', type='h1', id='') %}
+  <{{ type }} class="heading heading--{{ level }}" {% if id %}id="{{ id }}"{% endif %}>
+    {% if caller %}{{ caller() }}{% else %}{{ children }}{% endif %}</{{ type }}>
+{% endmacro %}

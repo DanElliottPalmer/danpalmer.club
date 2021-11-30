@@ -5,6 +5,13 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "build": "npm run clean && npm run build:sass && npm run build:11ty",
+    "build:11ty": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "build:sass": "npx node-sass --importer node_modules/node-sass-json-importer/dist/cli.js --output src/static/css --source-map true --output-style compressed src/_includes/styles/index.scss",
+    "clean": "rm -rf ./_site",
+    "dev": "npm run dev:11ty & npm run dev:sass",
+    "dev:11ty": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "dev:sass": "npx node-sass --importer node_modules/node-sass-json-importer/dist/cli.js --watch --output src/static/css --recursive --source-map true --error-bell src/_includes/styles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +24,23 @@
   "bugs": {
     "url": "https://github.com/DanElliottPalmer/danpalmer.club/issues"
   },
-  "homepage": "https://github.com/DanElliottPalmer/danpalmer.club#readme"
+  "homepage": "https://github.com/DanElliottPalmer/danpalmer.club#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "date-fns": "^2.26.0",
+    "highlight.js": "^11.3.1",
+    "markdown-it": "^12.2.0",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-ins": "^3.0.1",
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "node-sass": "^6.0.1",
+    "node-sass-json-importer": "^4.3.0",
+    "prettier": "^2.4.1",
+    "sass": "^1.43.4",
+    "slugify": "^1.6.3"
+  }
 }

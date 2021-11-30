@@ -1,0 +1,15 @@
+{% macro card_stack(items) %}
+  {% if items | length > 0 %}
+    <div class="card-stack">
+      {% for item in items %}
+        <div class="card-stack__item">
+          {% if caller %}
+            {{ caller(item) }}
+          {% else %}
+            {{ item }}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endmacro %}

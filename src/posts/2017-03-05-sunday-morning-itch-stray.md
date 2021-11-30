@@ -14,7 +14,7 @@ title: Sunday Morning Itch - Stray
 
 _Stray_ is a dungeon exploration game with a pinch of puzzle.
 
-![Stray](/images/smi-stray-game.jpg)
+![Stray](/static/images/smi-stray-game.jpg)
 
 There is a deep underlying bass track to the music. The method is which it has been placed together sounds bubbly but not as if water bubble, something thicker like oil or tar. There is a lighter sound over the top; keyboard + chorus + flanger + shit-load of echo. The way it is played almost sounds question-like which complements this game terribly well as you're exploring the dungeon, unsure with what awaits ~~around the corner~~ on the next screen. If they were to add some bitcrusher, I believe this backing music could easily be fitted into Axiom Verge.
 
@@ -28,7 +28,7 @@ The controls are simple:
 
 Apparently, I miss understood the first screen you get when you load as some kind of symbols possibly associated with the game as when I went through my first run, I was completely unaware I could view my inventory. In my head, I was curious if there was a way to see what I was currently carrying completely oblivious to the fact I had already read the controls.
 
-![Stray - Controls](/images/smi-stray-controls.jpg)
+![Stray - Controls](/static/images/smi-stray-controls.jpg)
 
 I love the black and white colours. So simple and also very harsh which only works well in this crisp, sharp pixel art style. Towards the edge of the screen, the display is very slightly curved. Along with this is a bit of RGB splitting adding the only colour to the game: cyan, red, little bit of blue and some green. Very subtly the screen is also scaling up and down as if it were breathing softly.
 
@@ -40,7 +40,7 @@ The labels in the game (caused by interacting with a spawn point or checking you
 
 The block cursor at the end of the line flashes furiously as letters within the sentence glitch and are replaced with others.
 
-![Stray - Labels](/images/smi-stray-feel-safe.jpg)
+![Stray - Labels](/static/images/smi-stray-feel-safe.jpg)
 _I couldn't catch it saying safe_
 
 As you move from screen-to-screen, the map feels like it rolls in from off of the screen following the faux curved screen.
@@ -53,5 +53,5 @@ Once you finish the game, one of the last messages displayed is how many secrets
 
 Itch link: [https://rxi.itch.io/stray](https://rxi.itch.io/stray)
 
-[![Stray - End screen](/images/smi-stray-end.jpg)](/images/smi-stray-end.jpg)
+[![Stray - End screen](/static/images/smi-stray-end.jpg)](/static/images/smi-stray-end.jpg)
 _Blank screen._

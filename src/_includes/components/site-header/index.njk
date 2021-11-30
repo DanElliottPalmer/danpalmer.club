@@ -1,0 +1,29 @@
+{% from '../anchor/index.njk' import anchor %}
+{% from '../heading/index.njk' import heading %}
+{% from '../link-list/index.njk' import link_list %}
+
+{% macro site_header() %}
+  <header class="site-header">
+    <h1 class="site-header__title">Hello,<br />I am Dan Palmer</h1>
+    <p class="site-header__body">
+      I am a Web Developer that enjoys dabbling in the fine art of CSS (and lots of other stuff).
+    </p>
+    <p class="site-header__body">
+      I {{ anchor('tweet', 'https://www.twitter.com/iamdanpalmer') }} an awful lot of crap whilst listening to an appaling amount of {{ anchor('music', 'https://www.last.fm/user/universalgonads') }}. I wear shorts all year round and one of my nicknames is Gonads. I also usually have a potty mouth.
+    </p>
+
+    {% set social_links = [{
+      'label': '🐦 Twitter',
+      'url': 'https://www.twitter.com/iamdanpalmer'
+    }, {
+      'label': '💻 Github',
+      'url': 'https://www.github.com/danelliottpalmer'
+    }, {
+      'label': '🎵 Last.fm',
+      'url': 'https://www.last.fm/user/universalgonads'
+    }] %}
+    {% call(link) link_list(links=social_links) %}
+      {{ anchor(link['label'], link['url']) }}
+    {% endcall %}
+  </header>
+{% endmacro %}

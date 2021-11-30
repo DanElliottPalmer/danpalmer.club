@@ -28,7 +28,7 @@ With this in mind, I have decided that I will play a few games every Sunday morn
 
 _The Polaroid_ is an escape the room game with a little twist. Instead of your traditional click-around-the-room-to-find-the-pixel-you-need mechanic, it uses the premise of lining up polaroid images with objects in the room in order to reveal interactable items. Some of the objects in the room you can pick up, rotate and move about whilst others act as they were part of a sliding puzzle. This game was made for Lundum Dare 36 whose theme was ancient technology.
 
-![The Polaroid](/images/smi-the-polaroid.jpg)
+![The Polaroid](/static/images/smi-the-polaroid.jpg)
 
 You start off with a tutorial photo where you must line up a picture frame on the wall and guitar at the bottom of a bed. It shames me to say this, but this image took me the longest. I had not discovered that items on the wall were also adjustable so spent the majority of my game struggling on this darn first puzzle. After discovering this new form of interactivity, it was smooth sailing from there. Once you have finished with the tutorial photo, you are presented with four more on the wall that you must solve.
 
@@ -42,7 +42,7 @@ I finished the other images fairly quick and left the room. It made me realise, 
 
 _There you go_ is another escape the room game. It employs the common click hunting technique to explore the rooms but however it has added an extra three perspectives to explore. This is down to its isometric art style. With each room, you can rotate it 90 degrees allowing you to investigate each wall discovering doors, paintings or air vents.
 
-![There you go](/images/smi-there-you-go.jpg)
+![There you go](/static/images/smi-there-you-go.jpg)
 
 I managed to progress through the rooms fairly quick due to some strategic insta-room rotating technique I developed to fully be aware of what was around me. However, there was a room that stood out. Room 7.
 

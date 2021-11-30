@@ -36,7 +36,7 @@ I pass a wall with "DREAMS COME TRUE" written in ink.
 
 I continue down corridors and come across an audio player. It contains an employee expressing his concern for the business as they were no longer finishing work on time. Also he describes about some strange behaviour from Joey; needing workers to donate something from their workstations in order to "appease the gods".
 
-[![Bendy and the Ink Machine](/images/smi-bendy.jpg)](/images/smi-bendy.jpg){:target="\_blank"}
+[![Bendy and the Ink Machine](/static/images/smi-bendy.jpg)](/static/images/smi-bendy.jpg){:target="\_blank"}
 
 I pass rooms that contain an ink machine, a projector with a button reading flow and one with a character strapped down to a table. The creature has its chest cut open and also looks as if it could have come from the studio's fictitious work. Below are puddles of ink and on the wall is written "WHO'S LAUGHING NOW?" Perhaps this "ink" is something else's blood.
 
@@ -68,7 +68,7 @@ You are a sailor who's ship has broken apart upon arriving to the islands. Your 
 
 The colour and style of this game resemble an old hand drawn map. Faded yellowy paper and simple map symbols showing pick up items, mountains and sea lines. The view being contained to a circle feels very compass-like.
 
-[![Reap](/images/smi-reap.jpg)](/images/smi-reap.jpg){:target="\_blank"}
+[![Reap](/static/images/smi-reap.jpg)](/static/images/smi-reap.jpg){:target="\_blank"}
 
 There are few things you can do in this game which makes it easy to plan but also hard as you're confined to its limitations. These are:
 
@@ -92,7 +92,7 @@ This shows how hungry you are. As you play, this meter slowly empties. Usually a
 
 I love how this is displayed. Your view is displayed within a circle window. Around the outside is a sun, slowly rotating round. As it moves, the screen darkens if its getting towards night time but it also shrinks the radius of the circle, limiting your character view range. This makes it a lot harder to explore whilst on the sea.
 
-[![Reap - Eating turnips](/images/smi-reap-turnips.jpg)](/images/smi-reap-turnips.jpg){:target="\_blank"}
+[![Reap - Eating turnips](/static/images/smi-reap-turnips.jpg)](/static/images/smi-reap-turnips.jpg){:target="\_blank"}
 _My face when I eat turnips_
 
 As much as I loved the simplicity of this game, I found it a bit too hard as when moving from one island to another, I just got lost at sea.

@@ -1,0 +1,40 @@
+{% from './_includes/components/skip-to-main-button/index.njk' import skip_to_main_button %}
+{% from './_includes/components/site-header/index.njk' import site_header %}
+{% from './_includes/components/site-footer/index.njk' import site_footer %}
+{% from './_includes/components/heading/index.njk' import heading %}
+{% from './_includes/components/card-stack/index.njk' import card_stack %}
+{% from './_includes/components/stacked-card/index.njk' import stacked_card %}
+
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+
+  <div class="site-wrapper">
+    {{ skip_to_main_button() }}
+
+    {{ site_header() }}
+
+    <main id="main-content">
+      {{ heading('Latest', level='two', type='h2') }}
+
+      {% call(item) card_stack(items=collections.mostRecent) %}
+        {{ stacked_card(
+          item['title'],
+          item['url'],
+          teaser=item['teaser'],
+          publish_date_label=item['publish_date_label'],
+          publish_date_datetime=item['publish_date_datetime'],
+          category_name=item['category_name'],
+          category_url=item['category_url']
+        ) }}
+      {% endcall %}
+
+      {% call() heading(level='two', type='div') %}
+        Oldest <span class="sarcasm">(duh)</span>
+      {% endcall %}
+    </main>
+
+    {{ site_footer() }}
+  </div>
+
+{% endblock %}

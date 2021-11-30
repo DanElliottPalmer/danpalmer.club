@@ -1,0 +1,15 @@
+{% macro link_list(links) %}
+  {% if links | length > 0 %}
+    <ul class="link-list">
+      {% for link in links %}
+        <li class="link-list__item">
+          {% if caller %}
+            {{ caller(link) }}
+          {% else %}
+            {{ link }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

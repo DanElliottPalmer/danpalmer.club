@@ -1,0 +1,58 @@
+.button {
+  @include apply-type-styles("roles.body");
+  font-size: get-type-size("medium");
+  padding: modular-scale(1) modular-scale(2);
+}
+
+.button--primary {
+  background-color: get-color-token("background.button-primary.normal");
+  color: get-color-token("text.button-primary.normal");
+
+  &:focus {
+    background-color: get-color-token("background.button-primary.focus");
+    color: get-color-token("text.button-primary.focus");
+  }
+
+  &:link {
+    background-color: get-color-token(
+      "background.button-primary.link",
+      get-color-token("background.button-primary.normal")
+    );
+    color: get-color-token(
+      "text.button-primary.link",
+      get-color-token("text.button-primary.normal")
+    );
+  }
+
+  &:visited {
+    background-color: get-color-token(
+      "background.button-primary.visited",
+      get-color-token("background.button-primary.normal")
+    );
+    color: get-color-token(
+      "text.button-primary.visited",
+      \get-color-token("text.button-primary.normal")
+    );
+  }
+
+  &:hover {
+    background-color: get-color-token("background.button-primary.hover");
+    color: get-color-token("text.button-primary.hover");
+  }
+
+  &:active {
+    background-color: get-color-token(
+      "background.button-primary.active",
+      get-color-token("background.button-primary.hover")
+    );
+    color: get-color-token(
+      "text.button-primary.active",
+      get-color-token("text.button-primary.hover")
+    );
+  }
+
+  &:disabled {
+    background-color: get-color-token("background.button-primary.disabled");
+    color: get-color-token("text.button-primary.disabled");
+  }
+}

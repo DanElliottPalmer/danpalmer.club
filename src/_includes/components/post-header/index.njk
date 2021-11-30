@@ -1,0 +1,22 @@
+{% from '../anchor/index.njk' import anchor %}
+{% from '../link-list/index.njk' import link_list %}
+
+{% macro post_header(title, publish_date_label='', publish_date_datetime='',
+    category_name='', category_url='') %}
+
+  <header class="post-header">
+    {% set nav_links = [{
+      'label': '🏡 Home',
+      'url': '/'
+    }] %}
+    <nav class="post-header__nav">
+      {% call(link) link_list(links=nav_links) %}
+        {{ anchor(link['label'], link['url']) }}
+      {% endcall %}
+    </nav>
+    <h1 class="post-header__title">{{ title }} </h1>
+    <p class="post-header__meta">
+      Written on <time datetime="{{ publish_date_datetime }}">{{ publish_date_label }}</time> under {{ anchor(category_name, category_url, type='secondary') }}
+    </p>
+  </header>
+{% endmacro %}

@@ -24,14 +24,14 @@ I've had this game sitting in my itch collection for a while wondering when the 
 
 _Orchids to Dusk_ is a **short** third person exploration game. Short being the keyword here. About five minutes long. The premise is that you are an astronaut that has crashed landed onto an alien planet with no resources and limited oxygen supply living out your final moments.
 
-![Orchids to Dusk - Afro](/images/smi-orchids-to-dusk-afro.jpg)
+![Orchids to Dusk - Afro](/static/images/smi-orchids-to-dusk-afro.jpg)
 _Your character has a dashing afro_
 
 As the game loads, it displays your character on an empty, sea green coloured planet. Scattered over the hills you can see sections of greenery: trees, bushes, flowers. Stretching across the whole sky is orange as if you have coincidentally landed as the sun is setting (perhaps that was the reason behind the crash landing, you just wanted to have a better view of that glorious orange sky).
 
 As you begin to walk around, the sound of wind rolls off the hills that surround you. Moments later, the calm atmospheric music fades in. It's music that I could happily listen to whilst I work. This pleases me.
 
-![Orchids to Dusk - Planet](/images/smi-orchids-to-dusk-planet.jpg)
+![Orchids to Dusk - Planet](/static/images/smi-orchids-to-dusk-planet.jpg)
 
 I go off and explore. I find a little alien buddy laying on the floor. I was not alone in my ship.
 
@@ -53,7 +53,7 @@ I mull over a few things my character must have been going through: crashing ont
 
 I take off the helmet.
 
-![Orchids to Dusk - Helmet](/images/smi-orchids-to-dusk-helmet.jpg)
+![Orchids to Dusk - Helmet](/static/images/smi-orchids-to-dusk-helmet.jpg)
 
 Oxygen system alarms go off. Pressure release sounds. The little alien guy crouches over onto the ground as giant pink balloons inflate out of the back till they pop... popping into the same green foliage that surrounds us.
 
@@ -75,7 +75,7 @@ I continue on my journey to the space station watching asteroids speed past me. 
 
 I arrive at the station and dock. This presents me with one of the main interfaces of the game: a terminal. Typing `help` provides me with a clear list of commands and simple description. During my playthrough, I really enjoyed using this display as it felt super simple and the commands were easy to remember.
 
-![Paradox - Terminal](/images/smi-paradox-terminal.jpg)
+![Paradox - Terminal](/static/images/smi-paradox-terminal.jpg)
 
 I sell some goodies (but not the debris, that shit is mine) and take on a mission. Destroy a ship and bring back its black box. The ship is far away so I know I need to conserve my fuel. As I travel, other ships whizz past me. I picture that I must be the equivalent of an old lady driving slowly down the motorway.
 
@@ -85,7 +85,7 @@ I open up my ships onboard terminal to see if there is anything I can do whilst 
 
 Whilst "strategically sailing" through the darkness, a space station appears on my map. One that I happen to almost be perfectly in line with. If I can just be close and quick enough to dock, I can refuel and be on my merry way. 500. 400. 300. Here we go.
 
-![Paradox - Out of range](/images/smi-paradox-out-of-range.jpg)
+![Paradox - Out of range](/static/images/smi-paradox-out-of-range.jpg)
 
 I'm just out of reach as I slide past helpless. I then hit an asteroid ಠ_ಠ
 

@@ -1,0 +1,10 @@
+{% macro button(children='', level='primary', type='button', href='#', class='') %}
+  {% set content = children %}
+  {% if caller %}{% set content = caller() %}{% endif %}
+
+  {% if type == 'button' %}
+    <button class="button button--{{ level }} {{ class }}">{{ content }}</button>
+  {% elif type == 'link' %}
+    <a class="button button--{{ level }} {{ class }}" href="{{ href | e }}">{{ content }}</a>
+  {% endif %}
+{% endmacro %}

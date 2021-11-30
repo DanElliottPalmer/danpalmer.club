@@ -1,0 +1,29 @@
+.post-header {
+  margin-bottom: modular-scale(3);
+  position: relative;
+}
+
+.post-header::after {
+  @include apply-wavy-line();
+  margin: modular-scale(3) 0 0 0;
+}
+
+.post-header__nav {
+  margin: 0 0 modular-scale(2) 0;
+}
+
+.post-header__title {
+  @include apply-type-styles("roles.heading");
+  color: get-color-token("text.heading");
+  font-size: get-type-size("extra-extra-large");
+  margin: 0 0 modular-scale(3) 0;
+}
+
+.post-header__meta {
+  @include apply-type-styles("roles.body");
+  color: get-color-token("text.body");
+  font-size: get-type-size("medium");
+  font-style: italic;
+  margin: modular-scale(2) 0;
+}
+

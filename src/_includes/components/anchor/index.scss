@@ -1,0 +1,70 @@
+.anchor {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.anchor--primary {
+  color: get-color-token("text.link-primary.normal");
+
+  &:focus {
+    color: get-color-token("text.link-primary.focus");
+  }
+
+  &:link {
+    color: get-color-token(
+      "text.link-primary.link",
+      get-color-token("text.link-primary.normal")
+    );
+  }
+
+  &:visited {
+    color: get-color-token(
+      "text.link-primary.visited",
+      get-color-token("text.link-primary.normal")
+    );
+  }
+
+  &:hover {
+    color: get-color-token("text.link-primary.hover");
+  }
+
+  &:active {
+    color: get-color-token(
+      "text.link-primary.active",
+      get-color-token("text.link-primary.hover")
+    );
+  }
+}
+
+.anchor--secondary {
+  color: get-color-token("text.link-secondary.normal");
+
+  &:focus {
+    color: get-color-token("text.link-secondary.focus");
+  }
+
+  &:link {
+    color: get-color-token(
+      "text.link-secondary.link",
+      get-color-token("text.link-secondary.normal")
+    );
+  }
+
+  &:visited {
+    color: get-color-token(
+      "text.link-secondary.visited",
+      get-color-token("text.link-secondary.normal")
+    );
+  }
+
+  &:hover {
+    color: get-color-token("text.link-secondary.hover");
+  }
+
+  &:active {
+    color: get-color-token(
+      "text.link-secondary.active",
+      get-color-token("text.link-secondary.hover")
+    );
+  }
+}

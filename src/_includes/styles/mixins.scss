@@ -1,0 +1,60 @@
+@mixin apply-color-variables($map, $keys: []) {
+  @each $key, $value in $map {
+    $next-keys: append($keys, $key);
+    @if type-of($value) == "map" {
+      @include apply-color-variables($value, $next-keys);
+    } @else if not is-falsey($value) {
+      --color-#{list-join($next-keys, '-')}: var(--color-def-#{$value});
+    }
+  }
+}
+
+@mixin apply-css-variables {
+  // Spacing
+  --spacing-dense: #{to-rems(map-get($spacing, "dense"))};
+  --spacing-standard: #{to-rems(map-get($spacing, "standard"))};
+  --spacing-sparse: #{to-rems(map-get($spacing, "sparse"))};
+  --spacing: var(--spacing-standard);
+
+  // Color definitions
+  $color-definitions: map-get($colors, "definitions");
+  @each $color-name, $color-value in $color-definitions {
+    --color-def-#{$color-name}: #{$color-value};
+  }
+
+  // Color palettes
+  @include apply-color-variables(map-get($colors, "palettes"));
+  // Default to light
+  @include apply-color-variables(
+    map-get(map-get($colors, "palettes"), "light")
+  );
+
+  // Typography
+  $type-definitions: map-get($typography, "definitions");
+  @each $type-name, $type-values in $type-definitions {
+    @each $type-key, $type-value in $type-values {
+      --type-def-#{$type-name}-#{$type-key}: #{$type-value};
+    }
+  }
+
+  // Typography sizes
+  $type-sizes: map-get($typography, "sizes");
+  @each $font-key, $font-value in $type-sizes {
+    --type-size-#{$font-key}: #{to-rems($font-value)};
+  }
+}
+
+@mixin apply-type-styles($type-token) {
+  $token-value: get-type-token-value($type-token);
+  font-family: var(--type-def-#{$token-value}-family);
+  line-height: var(--type-def-#{$token-value}-line-height);
+}
+
+@mixin apply-wavy-line() {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='none' viewBox='0 0 48 14' xmlns='http://www.w3.org/2000/svg'><path d='m1 7.001c3.2468-4.5262 12.121-10.863 21.645 0s19.841 4.5262 23.81 0' stroke='%23727272' stroke-dasharray='4 4' stroke-width='2'/></svg>");
+  background-repeat: repeat-x;
+  display: block;
+  content: "";
+  height: 12px;
+  width: 100%;
+}
