@@ -1,7 +1,11 @@
 {% from '../anchor/index.njk' import anchor %}
 
-{% macro site_footer() %}
-  <footer class="site-footer">
-    <p class="site-footer__body">I have been feeding my ears with the organic sound juice of {{ anchor('Rise Against', '#') }}, {{ anchor('The Offspring', '#') }} and {{ anchor('AJR', '#') }} whilst my bones are constantly gyrating to {{ anchor('Its nice to know you work alone', '#') }} by {{ anchor('SilversunPickups', '#') }}.</p>
-  </footer>
+{% macro site_footer(lastfm='') %}
+  {% if lastfm %}
+    {% set topArtists = lastfm['topArtists'] %}
+    {% set topTrack = lastfm['topTrack'] %}
+    <footer class="site-footer">
+      <p class="site-footer__body">I have been feeding my ears with the organic sound juice of {{ anchor(topArtists[0].artist, topArtists[0].url) }}, {{ anchor(topArtists[1].artist, topArtists[1].url) }} and {{ anchor(topArtists[2].artist, topArtists[2].url) }} whilst my bones are constantly gyrating to {{ anchor(topTrack.name, topTrack.url) }} by {{ topTrack.artist }}.</p>
+    </footer>
+  {% endif %}
 {% endmacro %}
