@@ -4,6 +4,7 @@ date: 2021-02-18T09:00:00Z
 description: You're complicating things.
 layout: post
 slug: stop-duplicating-props-props
+permalink: "/posts/stop-duplicating-props-props/"
 status: published
 tags:
   - Javascript
