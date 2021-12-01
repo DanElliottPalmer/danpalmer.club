@@ -134,5 +134,5 @@ module.exports = {
   getCardModel,
   getMarkdownRenderer,
   isPublished,
-  sortPostPublishDateMostRecent
+  sortPostPublishDateMostRecent,
 };

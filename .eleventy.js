@@ -5,7 +5,7 @@ const {
   getCardModel,
   getMarkdownRenderer,
   isPublished,
-  sortPostPublishDateMostRecent
+  sortPostPublishDateMostRecent,
 } = require("./.eleventy-utils");
 
 module.exports = function (eleventyConfig) {
