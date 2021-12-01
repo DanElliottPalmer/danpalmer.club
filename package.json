@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "npm run clean && npm run build:sass && npm run build:11ty",
+    "build": "npm run clean && npm run lastfm && npm run build:sass && npm run build:11ty",
     "build:11ty": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "build:sass": "npx node-sass --importer node_modules/node-sass-json-importer/dist/cli.js --output src/static/css --source-map true --output-style compressed src/_includes/styles/index.scss",
     "clean": "rm -rf ./_site",
