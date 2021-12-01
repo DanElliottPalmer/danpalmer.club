@@ -3,7 +3,7 @@
   <head>
     
     <meta charset="utf-8" />
-    <title>{{ title }}</title>
+    <title>{{ title or seo.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Styles -->
@@ -13,15 +13,16 @@
 
     <!-- RSS Feed -->
     <!-- Canonical -->
+    <link rel="canonical" href="{{ [seo.site_url, page.url] | join }}" />
     <meta name="generator" content="CoffeeCup HTML Editor 3.5" />
-    <meta name="description" content="" />
-    <meta name="image" content="" />
+    <meta name="description" content="{{ description or seo.description }}" />
+    <meta name="image" content="{{ seo.image_url }}" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@iamdanpalmer" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:title" content="{{ title or seo.title }}" />
+    <meta name="twitter:description" content="{{ description or seo.description }}" />
+    <meta name="twitter:image" content="{{ seo.image_url }}" />
 
   </head>
   <body>
