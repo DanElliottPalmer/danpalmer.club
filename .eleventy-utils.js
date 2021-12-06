@@ -70,6 +70,14 @@ function applyRendererRules(markdownRenderer) {
   markdownRenderer.renderer.rules.mark_open = () => {
     return `<mark class="mark">`;
   };
+
+  markdownRenderer.renderer.rules.ordered_list_open = () => {
+    return '<ol class="ordered-list">';
+  };
+
+  markdownRenderer.renderer.rules.bullet_list_open = () => {
+    return '<ul class="unordered-list">';
+  };
 }
 
 function getAllPublishedPosts(collectionApi) {
