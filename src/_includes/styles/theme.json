@@ -3,12 +3,14 @@
     "definitions": {
       "alizarin-crimson": "#e21d1d",
       "cinnabar": "#e74646",
+      "cod-gray": "#131313",
       "dove-gray": "#727272",
       "eerie-black": "#1A1A1A",
       "fresh-eggplant": "#960365",
       "green": "#00ff00",
       "hollywood-cerise": "#DC0593",
-      "mercury": "#E5E5E5"
+      "mercury": "#E5E5E5",
+      "vulcan": "#131621"
     },
     "palettes": {
       "light": {
@@ -49,7 +51,44 @@
           }
         }
       },
-      "dark": {}
+      "dark": {
+        "background": {
+          "button-primary": {
+            "active": "",
+            "disabled": "",
+            "focus": "alizarin-crimson",
+            "hover": "alizarin-crimson",
+            "link": "",
+            "normal": "cinnabar",
+            "visited": ""
+          },
+          "mark": "green",
+          "page": "vulcan"
+        },
+        "border": "mercury",
+        "divider": "mercury",
+        "text": {
+          "button-primary": {
+            "active": "",
+            "disabled": "",
+            "focus": "",
+            "hover": "",
+            "link": "",
+            "normal": "",
+            "visited": ""
+          },
+          "body": "mercury",
+          "heading": "mercury",
+          "link-primary": {
+            "active": null,
+            "focus": "fresh-eggplant",
+            "hover": "fresh-eggplant",
+            "link": "hollywood-cerise",
+            "normal": "hollywood-cerise",
+            "visited": null
+          }
+        }
+      }
     }
   },
   "spacing": {
