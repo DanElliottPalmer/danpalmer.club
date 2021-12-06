@@ -9,6 +9,19 @@
   }
 }
 
+@mixin apply-palette-color-variables($map, $palette, $keys: []) {
+  @each $key, $value in $map {
+    $next-keys: append($keys, $key);
+    @if type-of($value) == "map" {
+      @include apply-palette-color-variables($value, $palette, $next-keys);
+    } @else if not is-falsey($value) {
+      --color-#{list-join($next-keys, '-')}: var(
+        --color-#{$palette}-#{list-join($next-keys, "-")}
+      );
+    }
+  }
+}
+
 @mixin apply-css-variables {
   // Spacing
   --spacing-dense: #{to-rems(map-get($spacing, "dense"))};
@@ -24,10 +37,16 @@
 
   // Color palettes
   @include apply-color-variables(map-get($colors, "palettes"));
-  // Default to light
-  @include apply-color-variables(
-    map-get(map-get($colors, "palettes"), "light")
+  @include apply-palette-color-variables(
+    map-get(map-get($colors, "palettes"), "light"),
+    "light"
   );
+  @media (prefers-color-scheme: dark) {
+    @include apply-palette-color-variables(
+      map-get(map-get($colors, "palettes"), "light"),
+      "dark"
+    );
+  }
 
   // Typography
   $type-definitions: map-get($typography, "definitions");
