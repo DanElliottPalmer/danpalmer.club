@@ -1,6 +1,7 @@
 {% from '../anchor/index.njk' import anchor %}
 {% from '../heading/index.njk' import heading %}
 {% from '../link-list/index.njk' import link_list %}
+{% from '../wavy-line/index.njk' import wavy_line %}
 
 {% macro site_header() %}
   <header class="site-header">
@@ -25,5 +26,9 @@
     {% call(link) link_list(links=social_links) %}
       {{ anchor(link['label'], link['url']) }}
     {% endcall %}
+
+    <div class="site-header__divider">
+      {{ wavy_line() }}
+    </div>
   </header>
 {% endmacro %}

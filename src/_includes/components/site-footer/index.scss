@@ -3,8 +3,7 @@
   position: relative;
 }
 
-.site-footer::before {
-  @include apply-wavy-line();
+.site-footer__divider {
   margin: 0 0 modular-scale(3) 0;
 }
 

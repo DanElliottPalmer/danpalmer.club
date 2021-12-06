@@ -3,11 +3,6 @@
   position: relative;
 }
 
-.post-header::after {
-  @include apply-wavy-line();
-  margin: modular-scale(3) 0 0 0;
-}
-
 .post-header__nav {
   margin: 0 0 modular-scale(2) 0;
 }
@@ -25,4 +20,8 @@
   font-size: get-type-size("medium");
   font-style: italic;
   margin: modular-scale(2) 0;
+}
+
+.post-header__divider {
+  margin: modular-scale(3) 0 0 0;
 }
