@@ -1,5 +1,3 @@
-const slugify = require("slugify");
-const { format } = require("date-fns");
 const markdownIt = require("markdown-it");
 const hljs = require("highlight.js");
 
@@ -92,10 +90,10 @@ function getCardModel({ data }) {
   if(data.is_external) title = `🛫 ${title}`;
 
   return {
-    category_name: data.category,
-    category_url: `/categories/#${slugify(data.category, { lower: true })}`,
-    publish_date_label: format(data.date, "do MMM, y"),
-    publish_date_datetime: data.date,
+    category_name: data.category_name,
+    category_url: data.category_url,
+    publish_date_label: data.publish_date_label,
+    publish_date_datetime: data.publish_date_datetime,
     tags: data.tags.slice(0),
     teaser: data.description,
     title,
