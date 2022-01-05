@@ -26,6 +26,7 @@ module.exports = {
     category_name: (data) => data.category,
     category_url: (data) =>
       `/categories/#${slugify(data.category, { lower: true })}`,
+    is_external: (data) => !!data.external_url,
     publish_date_label: (data) => format(data.date, "do MMM, y"),
     publish_date_datetime: (data) => data.date,
     schema: getPostSchema,
@@ -38,5 +39,6 @@ module.exports = {
         };
       });
     },
+    url: (data) => data.external_url || data.page.url
   },
 };

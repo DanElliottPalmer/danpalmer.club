@@ -88,6 +88,9 @@ function getAllPublishedPosts(collectionApi) {
 }
 
 function getCardModel({ data }) {
+  let title = data.title;
+  if(data.is_external) title = `🛫 ${title}`;
+
   return {
     category_name: data.category,
     category_url: `/categories/#${slugify(data.category, { lower: true })}`,
@@ -95,8 +98,8 @@ function getCardModel({ data }) {
     publish_date_datetime: data.date,
     tags: data.tags.slice(0),
     teaser: data.description,
-    title: data.title,
-    url: data.page.url,
+    title,
+    url: data.url,
   };
 }
 
