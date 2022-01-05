@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the website
         run: LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY }} npm run build
