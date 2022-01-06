@@ -3,6 +3,10 @@
   text-decoration: underline;
 }
 
+.anchor:hover {
+  text-decoration-style: wavy;
+}
+
 .anchor--primary {
   color: get-color-token("text.link-primary.normal");
 
