@@ -1,7 +1,8 @@
 {% from '../anchor/index.njk' import anchor %}
 
 {% macro stacked_card(title, url, teaser='', publish_date_label='',
-    publish_date_datetime='', category_name='', category_url='') %}
+    publish_date_datetime='', category_name='', category_url='',
+    is_external=false) %}
 
   {% set has_publish_meta = publish_date_label and publish_date_datetime %}
   {% set has_category_meta = category_name and category_url %}
@@ -9,7 +10,9 @@
 
   <article class="stacked-card">
     <h3 class="stacked-card__title">
-      {{ anchor(title, url) }}
+      {% call() anchor(href=url) %}
+        {{ title }} {% if is_external %} <span aria-hidden="true">🛫</span>{% endif %}
+      {% endcall %}
     </h3>
     {% if teaser %}
       <p class="stacked-card__teaser">{{ teaser }}</p>

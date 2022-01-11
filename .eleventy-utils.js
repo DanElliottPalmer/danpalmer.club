@@ -86,17 +86,15 @@ function getAllPublishedPosts(collectionApi) {
 }
 
 function getCardModel({ data }) {
-  let title = data.title;
-  if(data.is_external) title = `🛫 ${title}`;
-
   return {
     category_name: data.category_name,
     category_url: data.category_url,
+    is_external: data.is_external || false,
     publish_date_label: data.publish_date_label,
     publish_date_datetime: data.publish_date_datetime,
     tags: data.tags.slice(0),
     teaser: data.description,
-    title,
+    title: data.title,
     url: data.url,
   };
 }
