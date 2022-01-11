@@ -12,6 +12,7 @@ function getPostSchema(data) {
     },
     datePublished: "2015-02-05T08:00:00+08:00",
     headline: data.title,
+    image: data.seo.image_url,
     mainEntityOfPage: url.toString(),
     url: url.toString(),
   };
