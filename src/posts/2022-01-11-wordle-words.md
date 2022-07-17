@@ -256,7 +256,7 @@ pp.pprint(words_grouped_by_letters)
 
 There are a few things going on in this chunk. We have to identify which letters to create words from, create permutations from those letters but only care about ones that actually make letters and then choose the best word.
 
-In my first attempt, I was creating string permutations based off the alphabet * 2 to accomodate double letters (not even thinking if a letter was used 3 or 4 times). This ultimately never finished running as its just too many options. This is where I realised if we store the alphabetised keys in a set, we can perform an intersection on the remaining letters and use that for permutations instead.
+In my first attempt, I was creating string permutations based off the alphabet \* 2 to accomodate double letters (not even thinking if a letter was used 3 or 4 times). This ultimately never finished running as its just too many options. This is where I realised if we store the alphabetised keys in a set, we can perform an intersection on the remaining letters and use that for permutations instead.
 
 ```python
 def get_remaining_letters(find):
@@ -353,11 +353,11 @@ I've already had to play my third one to help myself out and it did exactly what
 
 ---
 
-**lares** *(plural, noun)*:
+**lares** _(plural, noun)_:
 ~ (in ancient Roman belief) household gods worshipped in conjunction with Vesta and the penates.
 
-**toing** *(noun)*:
+**toing** _(noun)_:
 ~ movement or travel backwards and forwards between two or more places.
 
-**ducky** *(adjective)*:
+**ducky** _(adjective)_:
 ~ charming; delightful.
