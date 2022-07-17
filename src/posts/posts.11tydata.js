@@ -40,6 +40,6 @@ module.exports = {
         };
       });
     },
-    url: (data) => data.external_url || data.page.url
+    url: (data) => data.external_url || data.page.url,
   },
 };

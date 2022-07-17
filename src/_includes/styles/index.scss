@@ -44,7 +44,8 @@ body {
   font-style: italic;
 }
 
-dl, .paragraph {
+dl,
+.paragraph {
   @include apply-type-styles("roles.body");
   color: get-color-token("text.body");
   font-size: get-type-size("medium");
