@@ -41,7 +41,7 @@
     "node-sass": "7.0.1",
     "node-sass-json-importer": "^4.3.0",
     "prettier": "2.7.1",
-    "sass": "1.54.3",
+    "sass": "1.54.4",
     "slugify": "^1.6.3"
   }
 }
