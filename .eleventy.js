@@ -1,5 +1,6 @@
 const util = require("util");
 const slugify = require("slugify");
+const htmlmin = require("html-minifier");
 const {
   getAllPublishedPosts,
   getCardModel,
@@ -87,6 +88,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("console", function (value) {
     const str = util.inspect(value);
     return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`;
+  });
+
+  // HTML Minifier
+  eleventyConfig.addTransform("html-minify", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      return htmlmin.minify(content, {
+        collapseWhitespace: true,
+        minifyURLs: true,
+        removeComments: true,
+        useShortDoctype: true,
+      });
+    }
+    return content;
   });
 
   return {
