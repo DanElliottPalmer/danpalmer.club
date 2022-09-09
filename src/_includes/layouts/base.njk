@@ -19,13 +19,14 @@
     <meta name="twitter:description" content="{{ description or seo.description }}" />
     <meta name="twitter:image" content="{{ seo.image_url }}" />
 
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+
   </head>
   <body>
     {% block content %}
     {% endblock %}
 
-    <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
     <!-- Scripts? -->
     <script type="module" src="/static/js/wavy-line.js"></script>
   </body>
