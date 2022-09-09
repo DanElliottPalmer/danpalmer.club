@@ -6,12 +6,6 @@
     <title>{{ title or seo.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
-
-    <!-- Scripts? -->
-    <script type="module" crossorigin src="/static/js/wavy-line.js"></script>
-
     <!-- RSS Feed -->
     <!-- Canonical -->
     <link rel="canonical" href="{{ [seo.site_url, page.url] | join }}" />
@@ -29,5 +23,10 @@
   <body>
     {% block content %}
     {% endblock %}
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    <!-- Scripts? -->
+    <script type="module" src="/static/js/wavy-line.js"></script>
   </body>
 </html>
