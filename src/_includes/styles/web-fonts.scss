@@ -29,17 +29,6 @@
 
 @font-face {
   font-display: swap;
-  font-family: "Merriweather";
-  font-style: italic;
-  font-weight: bold;
-  src: url("/static/fonts/merriweather/Merriweather-BoldItalic.woff2")
-      format("woff2"),
-    url("/static/fonts/merriweather/Merriweather-BoldItalic.woff")
-      format("woff");
-}
-
-@font-face {
-  font-display: swap;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
