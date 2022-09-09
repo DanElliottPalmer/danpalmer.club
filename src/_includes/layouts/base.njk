@@ -20,7 +20,12 @@
     <meta name="twitter:image" content="{{ seo.image_url }}" />
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+    {% set css %}
+      {% include "../../static/css/index.css" %}
+    {% endset %}
+    <style type="text/css">
+      {{ css | safe }}
+    </style>
 
   </head>
   <body>
