@@ -12,6 +12,18 @@
   padding: 0;
 }
 
+.link-list__item--small {
+  font-size: get-type-size("small");
+}
+
+.link-list__item--medium {
+  font-size: get-type-size("medium");
+}
+
+.link-list__item--large {
+  font-size: get-type-size("large");
+}
+
 .link-list__item + .link-list__item {
   margin-left: modular-scale(2);
 }
