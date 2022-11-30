@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-language" content="en-GB"/>
+    <title>{{ cv.meta.title }}</title>
+    {% set css %}
+      {% include "styles/cv.css" %}
+    {% endset %}
+    <style type="text/css">
+      {{ css | cssminify | safe }}
+    </style>
+    <meta name="author" content="{{ cv.meta.author }}"/>
+    <meta name="description" content="{{ cv.meta.description }}"/>
+    <meta property="og:description" content="{{ cv.meta.description }}"/>
+    <meta property="og:image" content="{{ cv.meta.image_url | safe }}"/>
+    <meta property="og:site_name" content="{{ cv.meta.title }}"/>
+    <meta property="og:title" content="{{ cv.meta.title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:description" content="{{ cv.meta.description }}"/>
+    <meta property="twitter:domain" content="{{ cv.bio.website | safe }}"/>
+    <meta property="twitter:image" content="{{ cv.meta.image_url | safe}}"/>
+    <meta property="twitter:title" content="{{ cv.meta.title }}"/>
+  </head>
+  <body>
+    <main>
+      <article>
+        <header class="section section--bio">
+          <h1 class="section__title section__title--bio">{{ cv.bio.name }}</h1>
+          <ul class="list list--inline">
+            <li>{{ cv.bio.location }}</li>
+            <li>
+              <a href="{{ cv.bio.email.url | safe }}"
+                >{{ cv.bio.email.text }}</a
+              >
+            </li>
+            <li>{{ cv.bio.phoneNo }}</li>
+            <li><a href="{{ cv.bio.website | safe }}">{{ cv.bio.website }}</a></li>
+          </ul>
+        </header>
+        <div class="content">
+          <div class="content__main">
+            <section class="section section--employment">
+              <h2 class="section__title">Employment</h2>
+              {% for employment in cv.employment %}
+              <section class="employment-item">
+                <header class="employment-item__header">
+                  <ul class="list list--inline">
+                    <li><h3 class="employment-item__title">{{ employment.company }}</h3></li>
+                    <li>{{ employment.role }}</li>
+                    <li><time datetime="{{ employment.date.datetime | safe }}">{{ employment.date.text }}</time></li>
+                  </ul>
+                </header>
+                {% if employment.skills | length > 0 %}
+                  <dl class="employment-item__skills">
+                    <dt>Skills:</dt>
+                    {% for skill in employment.skills %}
+                      <dd>{{ skill }}</dd>
+                    {% endfor %}
+                  </dl>
+                {% endif %}
+                {% if employment.duties | length > 0 %}
+                  <ul class="employment-item__duties">
+                    {% for duty in employment.duties %}
+                      <li>{{ duty }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </section>
+              {% endfor %}
+            </section>
+          </div>
+          <div class="content__rail">
+            <section class="section section--skills">
+              <h2 class="section__title">Skills</h2>
+              {% for skill in cv.skills %}
+                <section class="skill-group">
+                  <h3 class="skill-group__title skill-group__title--{{ skill.color }}">{{ skill.name }}</h3>
+                  <ul class="skill-group__items">
+                    {% for item in skill.items %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                </section>
+              {% endfor %}
+            </section>
+            <section class="section section--education">
+              <h2 class="section__title">Education</h2>
+              {% for education in cv.education %}
+                <section class="education-group">
+                  <h3 class="education-group__title">{{ education.school }}</h3>
+                  <p class="education-group__degree">{{ education.degree }}</p>
+                  <p class="education-group__description">{{ education.description }}</p>
+                </section>
+              {% endfor %}
+            </section>
+            <section class="section section--references">
+              <h2 class="section__title">References</h2>
+              <p>Available on request.</p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

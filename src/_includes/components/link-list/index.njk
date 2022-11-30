@@ -1,8 +1,8 @@
-{% macro link_list(links) %}
+{% macro link_list(links, size='small') %}
   {% if links | length > 0 %}
     <ul class="link-list">
       {% for link in links %}
-        <li class="link-list__item">
+        <li class="link-list__item link-list__item--{{ size }}">
           {% if caller %}
             {{ caller(link) }}
           {% else %}
