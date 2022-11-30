@@ -1,6 +1,7 @@
 const util = require("util");
 const slugify = require("slugify");
 const htmlmin = require("html-minifier");
+const sass = require("node-sass");
 const {
   getAllPublishedPosts,
   getCardModel,
@@ -88,6 +89,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("console", function (value) {
     const str = util.inspect(value);
     return `<div style="white-space: pre-wrap;">${unescape(str)}</div>;`;
+  });
+
+  // CSS (SASS) Minifier
+  eleventyConfig.addFilter("cssminify", function (code) {
+    return sass
+      .renderSync({ data: code, outputStyle: "compressed" })
+      .css.toString("utf8");
   });
 
   // HTML Minifier
