@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "author": "Dan Palmer",
+    "description": "Dan Palmer's Curriculum Vitae",
+    "image_url": "https://danpalmer.club/static/images/smile.jpeg",
+    "title": "Dan Palmer's CV"
+  },
+  "bio": {
+    "name": "Dan Palmer",
+    "location": "Based in New York",
+    "email": {
+      "text": "danelliottpalmer@gmail.com",
+      "url": "mailto:danelliottpalmer@gmail.com?subject=I%20wanted%20to%20chat"
+    },
+    "phoneNo": "Phone number available on request",
+    "website": "https://danpalmer.club"
+  },
+  "employment": [
+    {
+      "company": "Twitter",
+      "role": "Senior Software Engineer",
+      "date": {
+        "datetime": "2022-02-01",
+        "text": "Feb 2022 - Present"
+      },
+      "skills": ["HTML", "CSS", "Javascript", "D3", "Typescript", "GraphQL"],
+      "duties": [
+        "Jointly built a web tool to explore and visualise call trees and dependencies of GraphQL queries to improve debugging and alleviate oncall problems.",
+        "Mentored a summer intern for three months, who worked on a GraphQL Java benchmark testing suite and results dashboard.",
+        "Collaborated on an automated tool to open pull requests for NPM packages within Node-based projects.",
+        "Contributed to multiple technical design documents, and worked on a GraphQL mocking proposal including a service agnostic configuration file format."
+      ]
+    },
+    {
+      "company": "Condé Nast International",
+      "role": "Tech Lead",
+      "date": {
+        "datetime": "2019-01-01/2021-11-01",
+        "text": "Jan 2019 - Nov 2021"
+      },
+      "skills": [
+        "HTML",
+        "CSS",
+        "JS",
+        "Node",
+        "GraphQL",
+        "TypeScript",
+        "CircleCI",
+        "VCL"
+      ],
+      "duties": [
+        "Led the team that rebuilt Bon Appétit’s recipe and home-page leading to increased time spent on page and reader participation.",
+        "Led an effort to build a design system and component library for all international editions of Vogue and GQ.",
+        "Led a remote team of engineers from the US and UK in building a global design system and component library that could support 26 brands and 14 markets.",
+        "Improved engineering workflows through automated releases and helped improve bundling strategy for the consumable package resulting in fast loading sites.",
+        "Jointly led and managed a core team responsible for maintaining and improving the main web application underlying many of our global sites as well as our distributed platforms including AMP and RSS feeds. Work includes: promoting standardised code patterns (most recently focused on improving our implementation of GraphQL), removing dead code, optimising imports and exports for bundles, assisting brand teams in contributing to the codebase, and internationalised the application for 14 markets.",
+        "Maintained VCL for all international sites.",
+        "Was part of an oncall rota and assisted with setting up, maintaining and improving our monitors and alarms across multiple services."
+      ]
+    },
+    {
+      "company": "Condé Nast Britain",
+      "role": "Lead Frontend Developer",
+      "date": {
+        "datetime": "2015-06-01/2019-01-01",
+        "text": "Jun 2015 - Jan 2019"
+      },
+      "skills": [
+        "HTML",
+        "SCSS",
+        "Javascript",
+        "Mustache",
+        "Python",
+        "Redis",
+        "Flask"
+      ],
+      "duties": [
+        "Led the creation of the core frontend web application to sunset legacy applications.",
+        "Worked closely with design to create a themeable component library for eight UK brands including GQ, Vogue, Glamour and Wired.",
+        "Introduced optimisations for the frontend and application code: template caching, reducing api calls, javascript bundles, image optimisations, investigated inlining CSS.",
+        "Contributed to building a fast and flexible BBCode parser."
+      ]
+    },
+    {
+      "company": "The Telegraph",
+      "role": "Frontend Developer",
+      "date": {
+        "datetime": "2011-07-01/2015-06-01",
+        "text": "Jul 2011 - Jun 2015"
+      },
+      "skills": ["HTML", "CSS", "Javascript", "D3", "Raphael", "SVG"],
+      "duties": [
+        "Worked within Interactive Graphics Team. Collaborated with design to create fast turnaround day-to-day flat and interactive graphics to enhance online daily articles.",
+        "Worked on longer term big interactive projects such as live election maps for the UK and US, and yearly school league tables. Both required heavy data tidying and processing.",
+        "Collaborated with the Creative Director to build a reusable template and components for longform articles. Typically includes large quantities of stylised text, combinations of different media types and interactive graphics.",
+        "Created internal tools to assist journalists with enriching online articles. Two of the tools were a chart generator and datatable generator. Consumed CSVs, allowed customisation, exported static assets and provided embed codes."
+      ]
+    },
+    {
+      "company": "Primark Stores Ltd.",
+      "role": "Sales Assistant",
+      "date": {
+        "datetime": "2007-12-01/2011-08-01",
+        "text": "Dec 2007 - Aug 2011"
+      },
+      "skills": [],
+      "duties": ["Can fold clothes extremely well."]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Basic",
+      "color": "basic",
+      "items": ["WebGL", "Kubernetes", "PHP"]
+    },
+    {
+      "name": "Intermediate",
+      "color": "intermediate",
+      "items": [
+        "GraphQL",
+        "Testing",
+        "Git",
+        "Python",
+        "TypeScript",
+        "Photoshop",
+        "Illustrator",
+        "Figma",
+        "Web Performance",
+        "Code Reviews"
+      ]
+    },
+    {
+      "name": "Advanced",
+      "color": "advanced",
+      "items": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Canvas",
+        "Pairing",
+        "Node",
+        "Design Systems",
+        "Sass",
+        "React",
+        "Styled Components"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Ravensbourne College of Design and Communication",
+      "degree": "BSc (Hons) Content Development and Production - 2:1",
+      "description": "Course covered generating content across multiple platforms: web, television and radio. We were taught and trained in multiple skills like scriptwriting, directing, producing and time management."
+    }
+  ]
+}
