@@ -1,5 +1,6 @@
 {% from './_includes/components/skip-to-main-button/index.njk' import skip_to_main_button %}
 {% from './_includes/components/site-header/index.njk' import site_header %}
+{% from './_includes/components/site-navigation/index.njk' import site_navigation %}
 {% from './_includes/components/site-footer/index.njk' import site_footer %}
 {% from './_includes/components/heading/index.njk' import heading %}
 {% from './_includes/components/card-stack/index.njk' import card_stack %}
@@ -14,10 +15,12 @@
 
     {{ site_header() }}
 
+    {{ site_navigation() }}
+
     <main id="main-content">
       {{ heading('Categories', level='two', type='h2') }}
 
-      {% for group in collections.groupedByCategories %}
+      {% for group in collections.postsGroupedByCategories %}
         {{ heading(group.label, level='three', type='h3', id=group.slug) }}
 
         {% call(item) card_stack(items=group.posts) %}

@@ -1,0 +1,23 @@
+{% from '../anchor/index.njk' import anchor %}
+{% from '../link-list/index.njk' import link_list %}
+{% from '../wavy-line/index.njk' import wavy_line %}
+
+{% macro site_navigation() %}
+
+  {% set nav_links = [{
+    'label': '<span aria-hidden="true">✍️</span> Writings',
+    'url': '/'
+  }, {
+    'label': '<span aria-hidden="true">📑</span> Projects',
+    'url': '/projects'
+  }] %}
+
+  <nav class="site-navigation">
+    {% call(link) link_list(links=nav_links, size='large') %}
+      {% call() anchor(href=link['url']) %}
+        {{ link['label'] | safe }}
+      {% endcall %}
+    {% endcall %}
+  </nav>
+
+{% endmacro %}

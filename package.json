@@ -13,6 +13,7 @@
     "dev:11ty": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
     "dev:sass": "npx node-sass --importer node_modules/node-sass-json-importer/dist/cli.js --watch --output src/static/css --recursive --source-map true --error-bell src/_includes/styles",
     "lastfm": "node ./scripts/get_lastfm.js",
+    "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -18,24 +18,20 @@
     {{ site_navigation() }}
 
     <main id="main-content">
-      {{ heading('Latest Writings', level='two', type='h2') }}
 
-      {% call(item) card_stack(items=collections.mostRecentPosts) %}
+      {{ heading('Projects', level='two', type='h2') }}
+
+      {% call(item) card_stack(items=collections.projects) %}
         {{ stacked_card(
           item['title'],
           item['url'],
           teaser=item['teaser'],
           publish_date_label=item['publish_date_label'],
           publish_date_datetime=item['publish_date_datetime'],
-          category_name=item['category_name'],
-          category_url=item['category_url'],
-          is_external=item['is_external']
+          publish_prefix='Created on '
         ) }}
       {% endcall %}
 
-      {% call() heading(level='two', type='div') %}
-        Oldest Writings <span class="sarcasm">(duh)</span>
-      {% endcall %}
     </main>
 
     {{ site_footer(lastfm) }}

@@ -3,7 +3,7 @@
 {% from '../wavy-line/index.njk' import wavy_line %}
 
 {% macro post_header(title, publish_date_label='', publish_date_datetime='',
-    category_name='', category_url='') %}
+    category_name='', category_url='', publish_prefix='Written on ') %}
 
   <header class="post-header">
     {% set nav_links = [{
@@ -17,7 +17,7 @@
     </nav>
     <h1 class="post-header__title">{{ title }} </h1>
     <p class="post-header__meta">
-      Written on <time datetime="{{ publish_date_datetime }}">{{ publish_date_label }}</time> under {{ anchor(category_name, category_url, type='secondary') }}
+      {{ publish_prefix }}<time datetime="{{ publish_date_datetime }}">{{ publish_date_label }}</time>{% if category_name %} under {{ anchor(category_name, category_url, type='secondary') }}{% endif %}
     </p>
     <div class="post-header__divider">
       {{ wavy_line() }}

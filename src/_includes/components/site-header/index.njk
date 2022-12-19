@@ -14,20 +14,22 @@
     </p>
 
     {% set social_links = [{
-      'label': '🐦 Twitter',
+      'label': '<span aria-hidden="true">🐦</span> Twitter',
       'url': 'https://www.twitter.com/iamdanpalmer'
     }, {
-      'label': '💻 Github',
+      'label': '<span aria-hidden="true">💻</span> Github',
       'url': 'https://www.github.com/danelliottpalmer'
     }, {
-      'label': '🎵 Last.fm',
+      'label': '<span aria-hidden="true">🎵</span> Last.fm',
       'url': 'https://www.last.fm/user/universalgonads'
     }, {
-      'label': '📄 CV',
+      'label': '<span aria-hidden="true">📄</span> CV',
       'url': '/pages/cv/'
     }] %}
     {% call(link) link_list(links=social_links) %}
-      {{ anchor(link['label'], link['url']) }}
+      {% call() anchor(href=link['url']) %}
+        {{ link['label'] | safe }}
+      {% endcall %}
     {% endcall %}
 
     <div class="site-header__divider">
