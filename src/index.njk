@@ -18,7 +18,7 @@
     {{ site_navigation() }}
 
     <main id="main-content">
-      {{ heading('Latest', level='two', type='h2') }}
+      {{ heading('Latest Writings', level='two', type='h2') }}
 
       {% call(item) card_stack(items=collections.mostRecentPosts) %}
         {{ stacked_card(
@@ -34,7 +34,7 @@
       {% endcall %}
 
       {% call() heading(level='two', type='div') %}
-        Oldest <span class="sarcasm">(duh)</span>
+        Oldest Writings <span class="sarcasm">(duh)</span>
       {% endcall %}
     </main>
 
