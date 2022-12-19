@@ -81,18 +81,40 @@ function applyRendererRules(markdownRenderer) {
 function getAllPublishedPosts(collectionApi) {
   return collectionApi
     .getAll()
-    .filter((post) => isPublished(post))
-    .map((post) => getCardModel(post));
+    .filter(
+      (content) => isContentPublished(content) && isContentType(content, "post")
+    )
+    .map((post) => getCardModelFromPost(post));
 }
 
-function getCardModel({ data }) {
+function getAllPublishedProjects(collectionApi) {
+  return collectionApi
+    .getAll()
+    .filter(
+      (content) =>
+        isContentPublished(content) && isContentType(content, "project")
+    )
+    .map((project) => getCardModelFromProject(project));
+}
+
+function getCardModelFromPost({ data }) {
   return {
     category_name: data.category_name,
     category_url: data.category_url,
     is_external: data.is_external || false,
     publish_date_label: data.publish_date_label,
     publish_date_datetime: data.publish_date_datetime,
-    tags: data.tags.slice(0),
+    tags: (data.tags ?? []).slice(0),
+    teaser: data.description,
+    title: data.title,
+    url: data.url,
+  };
+}
+
+function getCardModelFromProject({ data }) {
+  return {
+    publish_date_label: data.publish_date_label,
+    publish_date_datetime: data.publish_date_datetime,
     teaser: data.description,
     title: data.title,
     url: data.url,
@@ -127,19 +149,24 @@ function getMarkdownRenderer() {
   return markdownRenderer;
 }
 
-function isPublished(post) {
-  return post.data.status === "published";
+function isContentPublished(content) {
+  return content.data.status === "published";
 }
 
-function sortPostPublishDateMostRecent(post1, post2) {
-  return post2.publish_date_datetime - post1.publish_date_datetime;
+function isContentType(content, type) {
+  return content.data.layout === type;
+}
+
+function sortContentMostRecent(content1, content2) {
+  return content2.publish_date_datetime - content1.publish_date_datetime;
 }
 
 module.exports = {
   applyRendererRules,
   getAllPublishedPosts,
-  getCardModel,
+  getAllPublishedProjects,
+  getCardModelFromPost,
   getMarkdownRenderer,
-  isPublished,
-  sortPostPublishDateMostRecent,
+  isContentPublished,
+  sortContentMostRecent,
 };

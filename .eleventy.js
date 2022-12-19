@@ -1,13 +1,12 @@
-const util = require("util");
+const util = require("node:util");
 const slugify = require("slugify");
 const htmlmin = require("html-minifier");
 const sass = require("node-sass");
 const {
   getAllPublishedPosts,
-  getCardModel,
   getMarkdownRenderer,
-  isPublished,
-  sortPostPublishDateMostRecent,
+  sortContentMostRecent,
+  getAllPublishedProjects,
 } = require("./.eleventy-utils");
 
 module.exports = function (eleventyConfig) {
@@ -20,13 +19,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("project", "layouts/project.njk");
 
   // Collections
-  eleventyConfig.addCollection("mostRecent", (collectionApi) => {
+  eleventyConfig.addCollection("mostRecentPosts", (collectionApi) => {
     return getAllPublishedPosts(collectionApi).sort((post1, post2) =>
-      sortPostPublishDateMostRecent(post1, post2)
+      sortContentMostRecent(post1, post2)
     );
   });
 
-  eleventyConfig.addCollection("groupedByCategories", (collectionApi) => {
+  eleventyConfig.addCollection("postsGroupedByCategories", (collectionApi) => {
     const publishedPosts = getAllPublishedPosts(collectionApi);
     const categories = new Map();
 
@@ -46,14 +45,12 @@ module.exports = function (eleventyConfig) {
           posts: categories
             .get(key)
             .slice(0)
-            .sort((post1, post2) =>
-              sortPostPublishDateMostRecent(post1, post2)
-            ),
+            .sort((post1, post2) => sortContentMostRecent(post1, post2)),
         };
       });
   });
 
-  eleventyConfig.addCollection("groupedByTags", (collectionApi) => {
+  eleventyConfig.addCollection("postsGroupedByTags", (collectionApi) => {
     const publishedPosts = getAllPublishedPosts(collectionApi);
     const tags = new Map();
 
@@ -75,11 +72,13 @@ module.exports = function (eleventyConfig) {
           posts: tags
             .get(key)
             .slice(0)
-            .sort((post1, post2) =>
-              sortPostPublishDateMostRecent(post1, post2)
-            ),
+            .sort((post1, post2) => sortContentMostRecent(post1, post2)),
         };
       });
+  });
+
+  eleventyConfig.addCollection("projects", (collectionApi) => {
+    return getAllPublishedProjects(collectionApi);
   });
 
   // Markdown renderer
