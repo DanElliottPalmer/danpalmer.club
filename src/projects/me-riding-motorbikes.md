@@ -1,5 +1,6 @@
 ---
 date: 2022-12-03T12:00:00Z
+description: A collection of motorbike pictures.
 layout: project
 status: published
 title: Dan and Rich Riding Motorbikes

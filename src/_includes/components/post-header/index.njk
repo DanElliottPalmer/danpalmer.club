@@ -7,12 +7,14 @@
 
   <header class="post-header">
     {% set nav_links = [{
-      'label': '🏡 Home',
+      'label': '<span aria-hidden="true">🏡</span> Home',
       'url': '/'
     }] %}
     <nav class="post-header__nav">
       {% call(link) link_list(links=nav_links) %}
-        {{ anchor(link['label'], link['url']) }}
+        {% call() anchor(href=link['url']) %}
+          {{ link['label'] | safe }}
+        {% endcall %}
       {% endcall %}
     </nav>
     <h1 class="post-header__title">{{ title }} </h1>
