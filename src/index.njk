@@ -20,7 +20,7 @@
     <main id="main-content">
       {{ heading('Latest', level='two', type='h2') }}
 
-      {% call(item) card_stack(items=collections.mostRecent) %}
+      {% call(item) card_stack(items=collections.mostRecentPosts) %}
         {{ stacked_card(
           item['title'],
           item['url'],
