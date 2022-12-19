@@ -20,7 +20,7 @@
     <main id="main-content">
       {{ heading('Tags', level='two', type='h2') }}
 
-      {% for group in collections.groupedByTags %}
+      {% for group in collections.postsGroupedByTags %}
         {{ heading(group.label, level='three', type='h3', id=group.slug) }}
 
         {% call(item) card_stack(items=group.posts) %}
