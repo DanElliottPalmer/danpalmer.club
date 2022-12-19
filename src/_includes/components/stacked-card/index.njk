@@ -2,7 +2,7 @@
 
 {% macro stacked_card(title, url, teaser='', publish_date_label='',
     publish_date_datetime='', category_name='', category_url='',
-    is_external=false) %}
+    is_external=false, publish_prefix='Written on ') %}
 
   {% set has_publish_meta = publish_date_label and publish_date_datetime %}
   {% set has_category_meta = category_name and category_url %}
@@ -21,7 +21,7 @@
       <ul class="stacked-card__meta-list">
         {% if has_publish_meta %}
           <li class="stacked-card__meta-list__item">
-            Written on <time datetime="{{ publish_date_datetime }}">{{ publish_date_label }}</time>
+            {{ publish_prefix }}<time datetime="{{ publish_date_datetime }}">{{ publish_date_label }}</time>
           </li>
         {% endif %}
         {% if has_category_meta %}
