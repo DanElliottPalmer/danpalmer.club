@@ -100,6 +100,14 @@
               <h2 class="section__title">References</h2>
               <p>Available on request.</p>
             </section>
+            <section class="section section--other">
+              <h2 class="section__title">Other Accomplishments</h2>
+              <ul class="section__generic-list">
+                {% for accomplishment in cv.accomplishments %}
+                <li class="section__generic-list__item">{{ accomplishment.description }}</li>
+                {% endfor %}
+              </ul>
+            </section>
           </div>
         </div>
       </article>

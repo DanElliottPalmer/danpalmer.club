@@ -162,3 +162,9 @@ h3 {
 .education-group__description {
   margin-block: var(--spacing-sm);
 }
+
+.section__generic-list {
+  padding-inline: 1em 0;
+}
+.section__generic-list__item {
+}

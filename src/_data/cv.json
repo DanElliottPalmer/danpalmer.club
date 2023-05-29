@@ -17,11 +17,24 @@
   },
   "employment": [
     {
+      "company": "Notion",
+      "role": "Software Engineer",
+      "date": {
+        "datetime": "2023-02-06",
+        "text": "Feb 2023 - Present"
+      },
+      "skills": ["HTML", "CSS", "Javascript", "Typescript"],
+      "duties": [
+        "Assisted with testing and fixing the Button block feature.",
+        "Was part of the team oncall rota."
+      ]
+    },
+    {
       "company": "Twitter",
       "role": "Senior Software Engineer",
       "date": {
         "datetime": "2022-02-01",
-        "text": "Feb 2022 - Present"
+        "text": "Feb 2022 - Feb 2023"
       },
       "skills": ["HTML", "CSS", "Javascript", "D3", "Typescript", "GraphQL"],
       "duties": [
@@ -151,6 +164,11 @@
       "school": "Ravensbourne College of Design and Communication",
       "degree": "BSc (Hons) Content Development and Production - 2:1",
       "description": "Course covered generating content across multiple platforms: web, television and radio. We were taught and trained in multiple skills like scriptwriting, directing, producing and time management."
+    }
+  ],
+  "accomplishments": [
+    {
+      "description": "Platinumed Lego Star Wars: The Complete Saga."
     }
   ]
 }
