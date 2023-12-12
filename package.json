@@ -39,7 +39,7 @@
     "markdown-it-ins": "^3.0.1",
     "markdown-it-mark": "^3.0.1",
     "markdown-it-sub": "^1.0.0",
-    "markdown-it-sup": "^1.0.0",
+    "markdown-it-sup": "^2.0.0",
     "node-sass": "9.0.0",
     "node-sass-json-importer": "^4.3.0",
     "prettier": "3.0.3",
