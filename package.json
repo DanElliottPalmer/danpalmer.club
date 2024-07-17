@@ -29,7 +29,7 @@
   "homepage": "https://github.com/DanElliottPalmer/danpalmer.club#readme",
   "devDependencies": {
     "@11ty/eleventy": "2.0.1",
-    "date-fns": "2.30.0",
+    "date-fns": "3.6.0",
     "highlight.js": "11.10.0",
     "html-minifier": "^4.0.0",
     "markdown-it": "14.1.0",
