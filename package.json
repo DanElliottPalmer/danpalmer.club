@@ -38,7 +38,7 @@
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-ins": "^4.0.0",
     "markdown-it-mark": "^4.0.0",
-    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "node-sass": "9.0.0",
     "node-sass-json-importer": "^4.3.0",
