@@ -18,6 +18,8 @@
 @import "../components/post-tags/index.scss";
 @import "../components/wavy-line/index.scss";
 
+@include apply-css-properties;
+
 :root {
   @include apply-css-variables;
 }

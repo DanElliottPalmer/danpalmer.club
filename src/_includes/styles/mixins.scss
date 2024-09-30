@@ -68,3 +68,26 @@
   font-family: var(--type-def-#{$token-value}-family);
   line-height: var(--type-def-#{$token-value}-line-height);
 }
+
+@mixin apply-css-properties {
+  @include define-property("spacing-dense", "<length>");
+  @include define-property("spacing-stardard", "<length>");
+  @include define-property("spacing-sparse", "<length>");
+
+  $color-definitions: map-get($colors, "definitions");
+  @each $color-name, $color-value in $color-definitions {
+    @include define-property("color-def-#{$color-name}", "<color>");
+  }
+
+  // Typography sizes
+  $type-sizes: map-get($typography, "sizes");
+  @each $font-key, $font-value in $type-sizes {
+    @include define-property("type-size-#{$font-key}", "<length>");
+  }
+}
+
+@mixin define-property($name, $syntax) {
+  @property --#{$name} {
+    syntax: "#{$syntax}";
+  }
+}
