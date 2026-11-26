@@ -10,13 +10,25 @@ const fs = require("fs");
 const path = require("path");
 const { pathToFileURL, fileURLToPath } = require("url");
 const sass = require("sass");
-const { transformJSONtoSass } = require("node-sass-json-importer");
 
 const ROOT = path.resolve(__dirname, "..");
 const STYLES_DIR = path.join(ROOT, "src/_includes/styles");
 const ENTRY = path.join(STYLES_DIR, "index.scss");
 const OUT_FILE = path.join(ROOT, "src/static/css/index.css");
 const WATCH = process.argv.includes("--watch");
+
+// JSON to Sass values: objects become maps, arrays lists, "" an empty string,
+// and anything else is used as written (so "#e21d1d" stays a colour).
+function toSassValue(value) {
+  if (Array.isArray(value)) return `(${value.map(toSassValue).join(",")})`;
+  if (value && typeof value === "object") {
+    const entries = Object.entries(value).map(
+      ([key, item]) => `${key}: ${toSassValue(item)}`,
+    );
+    return `(${entries.join(",")})`;
+  }
+  return value === "" ? '""' : String(value);
+}
 
 // Turns `@import "./theme.json"` into Sass variables, one per top-level key.
 const jsonImporter = {
@@ -26,7 +38,10 @@ const jsonImporter = {
   },
   load(canonicalUrl) {
     const json = JSON.parse(fs.readFileSync(fileURLToPath(canonicalUrl), "utf8"));
-    return { contents: transformJSONtoSass(json), syntax: "scss" };
+    const contents = Object.entries(json)
+      .map(([key, value]) => `$${key}: ${toSassValue(value)};`)
+      .join("\n");
+    return { contents, syntax: "scss" };
   },
 };
 

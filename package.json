@@ -40,7 +40,6 @@
     "markdown-it-mark": "^4.0.0",
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
-    "node-sass-json-importer": "^4.3.0",
     "prettier": "3.4.2",
     "sass": "1.81.0",
     "slugify": "^1.6.6"
