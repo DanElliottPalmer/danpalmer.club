@@ -1,7 +1,7 @@
 const util = require("node:util");
 const slugify = require("slugify");
 const htmlmin = require("html-minifier");
-const sass = require("node-sass");
+const sass = require("sass");
 const {
   getAllPublishedPosts,
   getMarkdownRenderer,
@@ -92,9 +92,7 @@ module.exports = function (eleventyConfig) {
 
   // CSS (SASS) Minifier
   eleventyConfig.addFilter("cssminify", function (code) {
-    return sass
-      .renderSync({ data: code, outputStyle: "compressed" })
-      .css.toString("utf8");
+    return sass.compileString(code, { style: "compressed" }).css;
   });
 
   // HTML Minifier
