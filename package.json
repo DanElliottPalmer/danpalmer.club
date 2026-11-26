@@ -5,14 +5,14 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "npm run clean && npm run lastfm && npm run build:sass && npm run build:11ty",
+    "build": "npm run clean && npm run music && npm run build:sass && npm run build:11ty",
     "build:11ty": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "build:sass": "npx node-sass --importer node_modules/node-sass-json-importer/dist/cli.js --output src/static/css --source-map true --output-style compressed src/_includes/styles/index.scss",
     "clean": "rm -rf ./_site",
     "dev": "npm run dev:11ty & npm run dev:sass",
     "dev:11ty": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
     "dev:sass": "npx node-sass --importer node_modules/node-sass-json-importer/dist/cli.js --watch --output src/static/css --recursive --source-map true --error-bell src/_includes/styles",
-    "lastfm": "node ./scripts/get_lastfm.js",
+    "music": "node ./scripts/get_music.js",
     "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

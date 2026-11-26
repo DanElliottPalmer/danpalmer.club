@@ -1,10 +1,10 @@
 {% from '../anchor/index.njk' import anchor %}
 {% from '../wavy-line/index.njk' import wavy_line %}
 
-{% macro site_footer(lastfm='') %}
-  {% if lastfm %}
-    {% set topArtists = lastfm['topArtists'] %}
-    {% set topTrack = lastfm['topTrack'] %}
+{% macro site_footer(music='') %}
+  {% if music %}
+    {% set topArtists = music['topArtists'] %}
+    {% set topTrack = music['topTrack'] %}
     <footer class="site-footer">
       <div class="site-footer__divider">
         {{ wavy_line() }}
