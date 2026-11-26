@@ -37,7 +37,9 @@ const jsonImporter = {
     return new URL(url, containingUrl ?? pathToFileURL(ENTRY));
   },
   load(canonicalUrl) {
-    const json = JSON.parse(fs.readFileSync(fileURLToPath(canonicalUrl), "utf8"));
+    const json = JSON.parse(
+      fs.readFileSync(fileURLToPath(canonicalUrl), "utf8"),
+    );
     const contents = Object.entries(json)
       .map(([key, value]) => `$${key}: ${toSassValue(value)};`)
       .join("\n");
@@ -56,7 +58,10 @@ function build() {
 
   const mapName = `${path.basename(OUT_FILE)}.map`;
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
-  fs.writeFileSync(OUT_FILE, `${result.css}\n\n/*# sourceMappingURL=${mapName} */\n`);
+  fs.writeFileSync(
+    OUT_FILE,
+    `${result.css}\n\n/*# sourceMappingURL=${mapName} */\n`,
+  );
   // Make sources relative so the published map doesn't leak build paths.
   const sourceMap = {
     ...result.sourceMap,

@@ -66,7 +66,11 @@ async function getFromStats() {
 
 // The previous full week, Monday 00:00 UTC to Monday 00:00 UTC, as unix seconds.
 function previousWeek(now = new Date()) {
-  const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  const today = Date.UTC(
+    now.getUTCFullYear(),
+    now.getUTCMonth(),
+    now.getUTCDate(),
+  );
   const daysSinceMonday = (now.getUTCDay() + 6) % 7;
   const thisMonday = today - daysSinceMonday * 86400000;
   const lastMonday = thisMonday - 7 * 86400000;

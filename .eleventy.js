@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
   // Collections
   eleventyConfig.addCollection("mostRecentPosts", (collectionApi) => {
     return getAllPublishedPosts(collectionApi).sort((post1, post2) =>
-      sortContentMostRecent(post1, post2)
+      sortContentMostRecent(post1, post2),
     );
   });
 
