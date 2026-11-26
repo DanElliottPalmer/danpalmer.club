@@ -16,7 +16,7 @@ jobs:
         run: npm ci
 
       - name: Build the website
-        run: LASTFM_API_KEY=${{ secrets.LASTFM_API_KEY }} npm run build
+        run: npm run build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
