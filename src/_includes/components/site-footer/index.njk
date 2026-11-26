@@ -1,15 +1,24 @@
 {% from '../anchor/index.njk' import anchor %}
 {% from '../wavy-line/index.njk' import wavy_line %}
 
+{# Links when there's a url, plain text when there isn't (e.g. no MusicBrainz match). #}
+{% macro maybe_anchor(text, url) -%}
+  {%- if url %}{{ anchor(text, url) }}{% else %}{{ text }}{% endif -%}
+{%- endmacro %}
+
 {% macro site_footer(music='') %}
-  {% if music %}
-    {% set topArtists = music['topArtists'] %}
-    {% set topTrack = music['topTrack'] %}
+  {% set topArtists = music['topArtists'] if music else [] %}
+  {% set topTrack = music['topTrack'] if music else null %}
+  {% if topArtists | length %}
     <footer class="site-footer">
       <div class="site-footer__divider">
         {{ wavy_line() }}
       </div>
-      <p class="site-footer__body">I have been feeding my ears with the organic sound juice of {{ anchor(topArtists[0].artist, topArtists[0].url) }}, {{ anchor(topArtists[1].artist, topArtists[1].url) }} and {{ anchor(topArtists[2].artist, topArtists[2].url) }} whilst my bones are constantly gyrating to {{ anchor(topTrack.name, topTrack.url) }} by {{ topTrack.artist }}.</p>
+      <p class="site-footer__body">I have been feeding my ears with the organic sound juice of
+        {%- for item in topArtists %}
+          {%- if not loop.first %}{% if loop.last %} and{% else %},{% endif %}{% endif %} {{ maybe_anchor(item.artist, item.url) }}
+        {%- endfor %}
+        {%- if topTrack %} whilst my bones are constantly gyrating to {{ maybe_anchor(topTrack.name, topTrack.url) }} by {{ topTrack.artist }}{% endif %}.</p>
     </footer>
   {% endif %}
 {% endmacro %}
