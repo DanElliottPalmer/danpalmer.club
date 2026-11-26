@@ -1,6 +1,5 @@
 const util = require("node:util");
 const slugify = require("slugify");
-const htmlmin = require("html-minifier");
 const sass = require("sass");
 const {
   getAllPublishedPosts,
@@ -96,9 +95,11 @@ module.exports = function (eleventyConfig) {
   });
 
   // HTML Minifier
-  eleventyConfig.addTransform("html-minify", (content, outputPath) => {
-    if (outputPath.endsWith(".html")) {
-      return htmlmin.minify(content, {
+  // html-minifier is ESM-only with an async minify(), so import it lazily.
+  eleventyConfig.addTransform("html-minify", async (content, outputPath) => {
+    if (outputPath && outputPath.endsWith(".html")) {
+      const { minify } = await import("html-minifier");
+      return minify(content, {
         collapseWhitespace: true,
         minifyURLs: true,
         removeComments: true,
