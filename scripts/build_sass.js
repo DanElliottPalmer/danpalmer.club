@@ -23,7 +23,8 @@ function toSassValue(value) {
   if (Array.isArray(value)) return `(${value.map(toSassValue).join(",")})`;
   if (value && typeof value === "object") {
     const entries = Object.entries(value).map(
-      ([key, item]) => `${key}: ${toSassValue(item)}`,
+      // Quote keys: unquoted, a key like "green" would be read as a colour.
+      ([key, item]) => `${JSON.stringify(key)}: ${toSassValue(item)}`,
     );
     return `(${entries.join(",")})`;
   }
