@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function get-color-token($color-token, $fallback-value: inherit) {
   @return var(
     --color-#{str-replace($color-token, ".", "-")},
@@ -82,5 +84,5 @@
 
 @function to-rems($value) {
   $spacing-base: map-get($spacing, "base");
-  @return ($value / $spacing-base) * 1rem;
+  @return math.div($value, $spacing-base) * 1rem;
 }
